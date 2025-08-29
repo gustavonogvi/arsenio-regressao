@@ -22,8 +22,7 @@ Este projeto visa realizar uma análise estatística com regressão linear múlt
 
 ## Como contribuir
 
-1. Fork este repositório
-2. Crie uma branch (`git checkout -b feature-x`)
-3. Commit suas alterações (`git commit -m 'Adiciona análise X'`)
-4. Push para a branch (`git push origin feature-x`)
-5. Abra um Pull Request
+1. Crie uma nova branch (`git checkout -b nome-da-sua-branch`)
+2. Faça as alterações no código e realize commits (`git commit -m "Adiciona análise de regressão múltipla"`)
+3. Faça o push (`git push origin nome-da-sua-branch`)
+4. Abra um Pull Request
