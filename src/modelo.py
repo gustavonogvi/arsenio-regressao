@@ -27,7 +27,7 @@ print("------------------------------------------------")
 print(f"(y_predictor): {y_predictor}")
 print("------------------------------------------------")
 
-# 4ª: R**2
+# 4ª: R²
 ss_total = np.sum(((y - y.mean()) ** 2))
 ss_res = np.sum(((y - y_predictor) ** 2))
 r_score = 1 - (ss_res / ss_total)
@@ -43,21 +43,15 @@ print("------------------------------------------------")
 print(f"R² adjusted: {r2_ajustado}")
 print("------------------------------------------------")
 
-# 5ª: Testing datas with Idade=5, Uso_Beber = 5, Uso_Cozinhar = 5, Arsenio_Agua = 0.135
-x_test = np.array([1, 5, 5, 5, 0.135])
-y_pred_list = []
+# 5ª: Testing datas with Idade=30, Uso_Beber = 5, Uso_Cozinhar = 5, Arsenio_Agua = 0.135
+y_teste = beta[0] + beta[1] * 30 + beta[2] * 5 + beta[3] * 5 + beta[4] * 0.135
+print("------------------------------------------------")
+print(f"y_teste: {y_teste}")
+print("------------------------------------------------")
 
-for i in range((len(x_test))):
-    y_pred = beta[0] + beta[1] * x_test[i] + beta[2] * x_test[i]
-    y_pred_list.append(y_pred)
-
-y_pred_list = np.array(y_pred_list)
 
 plt.scatter(y, y_predictor, color="blue", label="Valores preditos")
 plt.plot(y, y, color="red", label="Reta ideal (y = y)")
-
-plt.scatter([y_pred_list], [y_pred_list], color="red", label="Letra B")
-
 plt.xlabel("Valor real (Arsenio_Unhas)")
 plt.ylabel("Valor predito")
 plt.title("Regressão Linear - Valores reais vs preditos")
